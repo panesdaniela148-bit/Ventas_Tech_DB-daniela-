@@ -2,9 +2,6 @@ DROP TABLE IF EXISTS ventas;
 DROP TABLE IF EXISTS productos;
 DROP TABLE IF EXISTS clientes;
 DROP TABLE IF EXISTS categorias;
-
--- ----------------------------------------------------------------------------
--- PASO 2: CREACIÓN DE TABLAS - DEFINICIÓN DEL ESQUEMA (DDL) Y CONSTRAINTS
 -- ----------------------------------------------------------------------------
 
 -- Tabla Dimensión: Categorías
@@ -49,9 +46,7 @@ CREATE TABLE ventas (
         FOREIGN KEY (id_producto) REFERENCES productos(id_producto)
 );
 
--- ----------------------------------------------------------------------------
--- PASO 3: CARGA INICIAL DE DATOS (DML)
--- ----------------------------------------------------------------------------
+-- ---------------------------------------------------------------------------
 
 -- 1. Insertar Categorías (4 registros)
 INSERT INTO categorias (id_categoria, nombre_categoria, descripcion) VALUES 
@@ -90,8 +85,6 @@ INSERT INTO ventas (id_venta, id_cliente, id_producto, cantidad, precio_unitario
 (9, 4, 4, 1, 120.00, '2024-03-14'),
 (10, 5, 3, 2, 450.00, '2024-03-15');
 
--- ----------------------------------------------------------------------------
--- PASO 4: CONSULTAS DE VERIFICACIÓN
 -- ----------------------------------------------------------------------------
 SELECT * FROM categorias;
 SELECT * FROM clientes;
