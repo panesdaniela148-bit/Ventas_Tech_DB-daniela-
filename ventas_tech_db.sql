@@ -1,3 +1,5 @@
+CREATE DATABASE Ventas_Tech_DB;
+------------------------------------------------
 DROP TABLE IF EXISTS ventas;
 DROP TABLE IF EXISTS productos;
 DROP TABLE IF EXISTS clientes;
